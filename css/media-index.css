@@ -313,6 +313,11 @@
 		max-width: none
 	}
 }
+@media (max-width:720px) {
+	.gup-styles-controls_control {
+		max-width: 100%
+	}
+}
 
 @media (min-width:720px) {
 	.gup-styles-controls_title {

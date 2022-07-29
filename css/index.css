@@ -567,9 +567,21 @@ a {
 	margin-left: -33%
 }
 
+.css-gup-styles-tank {
+	display: none;
+}
+
+.css-gup-styles-tank__active {
+	display: inline;
+}
+
 .gup-styles_print {
 	position: absolute;
 	z-index: 1
+}
+
+.null-css-color {
+	z-index: -1;
 }
 
 .gup-styles-controls {
