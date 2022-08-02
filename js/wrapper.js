@@ -94,15 +94,15 @@ const createListControlsItem = (wrapper, listControlsItem) => {
 
 createListControlsItem(jsGuStylesControlsContainer, conductorControlsItem);
 
-const jsGuStylesControlsItemPaint = document.querySelector(".gup-styles-controls_item__paint");
-const jsGuStylesControlsItemEmblem = document.querySelector(".gup-styles-controls_item__emblem");
-const jsGuStylesControlsItemInscription = document.querySelector(".gup-styles-controls_item__inscription");
+const jsGuStylesControlsItemPaint = document.querySelector('.' + conductorControlsItem[0].class);
+const jsGuStylesControlsItemEmblem = document.querySelector('.' + conductorControlsItem[1].class);
+const jsGuStylesControlsItemInscription = document.querySelector('.' + conductorControlsItem[2].class);
 
 
 
 const createControlsItemPaint = (dataControlsItemPaint) => {
     const controlsItemPaint = document.createElement('div')
-    controlsItemPaint.classList.add('gup-styles-controls_control', `${dataControlsItemPaint.class}`, `${dataControlsItemPaint.noActive || dataControlsItemPaint.active}`, `${dataControlsItemPaint.null || "none"}`)
+    controlsItemPaint.classList.add('gup-styles-controls_control', `${dataControlsItemPaint.class}`, `${dataControlsItemPaint.noActive || dataControlsItemPaint.active}`, `${dataControlsItemPaint.null}`)
 
     controlsItemPaint.innerHTML = `
         <img src="${dataControlsItemPaint.img}" alt="" />
@@ -177,17 +177,15 @@ const createMissions = (dataMissions) => {
 const createListMissions = (wrapper, listMissions) => {
     wrapper.textContent = '';
     listMissions.forEach(item => wrapper.append(createMissions(item)))
-    // listMissions.forEach(item => {
-    //     const character = createMissions(item)
-    //     wrapper.append(character)
-    // });
 };
 
 
 createListMissions(gupMissionsItem, constructorMissions);
 
-const gupAvaibleTop = document.querySelector(".js-gup-avaible-top");
+const gupAvaibleTop = document.querySelector(".js-gup-avaible-top"),
+      gupAvaibleFinal = document.querySelector(".js-gup-avaible-final");
 
+const avaible = [gupAvaibleTop, gupAvaibleFinal];
 
 const constructorAvaible = [{
     completed: ["Событие успешно завершено&nbsp;"], 
@@ -208,4 +206,5 @@ const createListAvaible = (wrapper, listAvaible) => {
 };
 
 
-createListAvaible(gupAvaibleTop, constructorAvaible);
+createListAvaible(avaible[0], constructorAvaible);
+createListAvaible(avaible[1], constructorAvaible);

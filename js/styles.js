@@ -190,7 +190,6 @@ const conductorControlsItemPaint = [
         "img": "./img/gup/img/on_tanks/color_duck.d26c2a.png",
         "name": "Оливковый",
         "noActive": "defaultNoActive",
-        // "null": "null-css-color"
     }
 ]
 
@@ -270,4 +269,15 @@ const conductorControlsItemInscription = [
         "name": "Panzer Vor!",
         "noActive": "defaultNoActive"
     },
+]
+
+const conductorActive = [
+    {
+        active: 'gup-styles-controls_control__active',
+        tankActive: 'css-gup-styles-tank__active'
+    },
+    {
+        menuActive: 'gup-styles-controls_menu-item__active',
+        listActive: 'gup-styles-controls_item__active'
+    }
 ]
