@@ -1,38 +1,50 @@
-// const buttonAudio = document.querySelector(".js-gup-audio-button");
+const buttonAudio = document.querySelector(".js-gup-audio-button");
 
-// const miho = document.querySelector(".gup-audio-girl-miho");
-// const saori = document.querySelector(".gup-audio-girl-saori");
-// const mako = document.querySelector(".gup-audio-girl-mako");
-// const hana = document.querySelector(".gup-audio-girl-hana");
-// const yukari = document.querySelector(".gup-audio-girl-yukari");
+const miho = document.querySelector('.' + constructorInfo[0].classList),
+      saori = document.querySelector('.' + constructorInfo[1].classList),
+      hana = document.querySelector('.' + constructorInfo[2].classList),
+      yukari = document.querySelector('.' + constructorInfo[3].classList),
+      mako = document.querySelector('.' + constructorInfo[4].classList);
 
-// const blocks = [saori, miho, mako, hana, yukari]
-// const names = ['start_battle_02.d25645'];
-// let active = null
-// let audio = null 
-
-
-// function randint(min, max) {
-//     if (min > max || min < 0) return 0
-//     return Math.floor(Math.random() * (max - min + 1) + min)
-// }
+const jsSubsMiho = document.querySelector('.' + constructorInfo[0].subsName),
+      jsSubsSaori = document.querySelector('.' + constructorInfo[1].subsName),
+      jsSubsHana = document.querySelector('.' + constructorInfo[2].subsName),
+      jsSubsYukari = document.querySelector('.' + constructorInfo[3].subsName),
+      jsSubsMako = document.querySelector('.' + constructorInfo[4].subsName);
 
 
-// buttonAudio.addEventListener("click", () => {
-//     audio?.stop?.()
-//     const index = randint(0, names.length -1) 
-//     const url = 'media' + '/' + `${names[index]}` + '.wav';
+const blocks = [miho, saori, hana, yukari, mako];
+const names = ['miho', 'saori', 'hana', 'yukari', 'mako'];
+const jsSubsText = [jsSubsMiho, jsSubsSaori, jsSubsHana, jsSubsYukari, jsSubsMako];
+const id = conductorGirlCharacter;
 
-//     audio = new Audio(url); 
-//     audio.play();
+let girlSubsText = null
+let audios = null 
+let number = null
 
-//     const blockIndex = randint(0, blocks.length -1) 
-//     active?.classList?.remove?.('gup-audio_girl__active')
 
-//     const target = blocks[blockIndex]
-//     target.classList.add('gup-audio_girl__active')
+function random(min, max) {
+    if (min > max || min < 0) return 0
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
-//     active = target
+buttonAudio.addEventListener("click", () => {
+    audios?.pause?.()
+    
+    const index = random(0, id.length -1) 
+    const url = 'media' + '/' + `${id[index].wav}` + '.wav';
 
-//     console.log(index, audio)
-// });
+    audios = new Audio(url); 
+    audios.play();
+
+    jsSubsText.forEach(subsGirl => subsGirl.textContent = '');
+    girlSubsText?.classList?.remove?.(characterActive[0].active)
+
+    number = names.findIndex(num => num == id[index].name)
+
+    if (names[number]) {
+        girlSubsText = blocks[number]
+        girlSubsText.classList.add(characterActive[0].active)
+        jsSubsText[number].textContent = `${id[index].subsText}`
+    }
+});

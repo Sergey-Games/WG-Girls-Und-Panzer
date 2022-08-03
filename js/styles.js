@@ -121,7 +121,7 @@ const stylesTank = [
         "classPaint": "js-gup-styles-tank-paint-olive",
         "noActive": "defaultNoActive",
         "noPrint": "defaultNoPrint"
-    },
+    }
 ]
 
 const constructorControlsMenu = [
@@ -268,7 +268,7 @@ const conductorControlsItemInscription = [
         "img": "./img/gup/img/on_tanks/inscription_panzer_vor.698668.png",
         "name": "Panzer Vor!",
         "noActive": "defaultNoActive"
-    },
+    }
 ]
 
 const conductorActive = [

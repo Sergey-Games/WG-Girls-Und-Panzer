@@ -18,8 +18,8 @@ const createCharacters = (dataCharacters) => {
             </div>
             <div class="gup-audio-tootlip_text">${dataCharacters.tootlipText}</div>
         </div>
-        <div class="gup-audio-subs gup-audio-subs__left">
-            <div class="gup-audio-subs_text"></div>
+        <div class="gup-audio-subs ${dataCharacters.subsRight || dataCharacters.subsLeft}">
+            <div class="gup-audio-subs_text ${dataCharacters.subsName}">Default</div>
         </div>
     `;
 
